@@ -60,21 +60,18 @@ else if (playerSelection == "scissors" && computerSelection =="rock") {
 
 
 
-function playCount() {
-if (cCount === 3) {
+for (let i=0; i<5; i++) {
+playRound()
+}
+
+if (cCount < pCount) {
 alert(`Final Score: ${pCount}:${cCount} Congratulations! ${pName} is the winner!`);
 }
 
-else if (cCount === 3 ) {
+else if (cCount > pCount) {
 alert(`Final Score: ${cCount}:${pCount} Computer won this game! You are the looser.`);
 }
 
 else if (cCount == pCount) {
 alert(`Final Score: ${pCount}:${cCount} This round is a draw`)
 }
-}
-
-
-}
-
-/* find out who is the winner*/
