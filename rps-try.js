@@ -8,22 +8,23 @@ let cCount = 0;
 let pCount = 0;
 
 function computerPlay () {
-let options = ["rock", "paper", "scissors"]
+let options = ["rock", "paper", "scissors"];
 let computerChoice = options[Math.floor(Math.random() * options.length)];
 return computerChoice
 }
 
 
+let rockButton = document.querySelector("#rock");
+let paperButton = document.querySelector("#paper");
+let scissorsButton = document.querySelector("#scissors");
 
-const buttons = document.querySelectorAll("button");
-  buttons.forEach (function (button){
-      button.addEventListener("click", function(){
-          playRound(button.innerHTML, computerPlay());
-          console.log(button.innerHTML)
-      })});
 
-function playRound (playerSelection, computerSelection) {
+rockButton.addEventListener("click", () => playRound("rock", computerPlay()));
+paperButton.addEventListener("click", () => playRound("paper", computerPlay()));
+scissorsButton.addEventListener("click", () => playRound("scissors", computerPlay()));
 
+
+function playRound(playerSelection, computerSelection) {
 if (playerSelection == "rock" && computerSelection == "rock") {
   alert(`It's a tie, you both chose ${computerSelection}. ${pName} ${cCount}: Computer ${pCount}`);
 }
@@ -56,22 +57,19 @@ else if (playerSelection == "scissors" && computerSelection == "paper") {
 else if (playerSelection == "scissors" && computerSelection =="rock") {
   pCount=+1;
   alert(`You loose, ${playerSelection} get smashed. ${pName} ${cCount}: Computer ${pCount}`);
-}
+}}
 
 
-
-for (let i=0; i<5; i++) {
-playRound()
-}
-
+function result() {
 if (cCount < pCount) {
-alert(`Final Score: ${pCount}:${cCount} Congratulations! ${pName} is the winner!`);
+   alert(`Final Score: ${pCount}:${cCount} Congratulations! ${pName} is the winner!`);
 }
 
 else if (cCount > pCount) {
-alert(`Final Score: ${cCount}:${pCount} Computer won this game! You are the looser.`);
+  alert(`Final Score: ${cCount}:${pCount} Computer won this game! You are the looser.`);
 }
 
 else if (cCount == pCount) {
-alert(`Final Score: ${pCount}:${cCount} This round is a draw`)
+  alert(`Final Score: ${pCount}:${cCount} This game is a draw`)
+}
 }
