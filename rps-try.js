@@ -88,5 +88,5 @@ function result () {
 
   else if (cCount == pCount) {
     alert(`Final Score: ${pCount}:${cCount} This game is a draw`)
-}
+  }
 }
